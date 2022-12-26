@@ -1,6 +1,7 @@
 package com.api.restapi.controller;
 import com.api.restapi.student.Student;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -29,4 +30,14 @@ public class StudentC {
 
         return students;
     }
+
+    // http:localhost:8080/students/Ram/Shyam
+
+    @GetMapping("{firstName}/{lastName}")
+    public Student studentPathVariable(@PathVariable("firstName") String firstName,
+                                       @PathVariable("lastName") String lastName){
+
+        return new Student(firstName,lastName);
+    }
+
 }
