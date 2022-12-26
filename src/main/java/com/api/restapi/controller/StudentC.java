@@ -2,6 +2,7 @@ package com.api.restapi.controller;
 import com.api.restapi.student.Student;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -40,4 +41,12 @@ public class StudentC {
         return new Student(firstName,lastName);
     }
 
+    // build rest api to handle query parameter
+    // http:localhost:8080/student?firstName=Ram
+    @GetMapping("/student/query")
+    public Student studentQueryParam(@RequestParam(name = "firstName") String firstName,
+                                     @RequestParam(name = "lastName") String lastName){
+
+        return new Student(firstName, lastName);
+    }
 }
