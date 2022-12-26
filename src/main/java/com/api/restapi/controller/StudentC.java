@@ -42,7 +42,7 @@ public class StudentC {
     }
 
     // build rest api to handle query parameter
-    // http:localhost:8080/student?firstName=Ram
+    // http://localhost:8181/student/query?firstName=Ram&lastName=Shyam
     @GetMapping("/student/query")
     public Student studentQueryParam(@RequestParam(name = "firstName") String firstName,
                                      @RequestParam(name = "lastName") String lastName){
