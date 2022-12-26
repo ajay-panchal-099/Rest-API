@@ -32,7 +32,7 @@ public class StudentC {
     }
 
     // http:localhost:8080/students/Ram/Shyam
-
+    // Adding Path Variable
     @GetMapping("{firstName}/{lastName}")
     public Student studentPathVariable(@PathVariable("firstName") String firstName,
                                        @PathVariable("lastName") String lastName){
