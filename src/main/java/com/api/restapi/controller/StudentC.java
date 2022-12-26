@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class StudentC {
 
+    // Return Java Bean obj to the client
     @GetMapping("/student")
     public Student getStudent(){
         return new Student("Ram","Shyam");
